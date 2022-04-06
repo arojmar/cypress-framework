@@ -1,18 +1,17 @@
 /// <reference types="Cypress" />
 
 describe("verify radio buttons via webdriveruni", () =>{
-    it("Check a specific radio button", () => {
+    beforeEach(() => {
         cy.visit('https://webdriveruniversity.com/');
         cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force:true});
+    });
 
+    it("Check a specific radio button", () => {
         cy.get('#radio-buttons').find("[type='radio']").first().check();
         cy.get('#radio-buttons').find("[type='radio']").eq(1).check();
     });
 
     it("Validate states of specific radio buttons", () => {
-        cy.visit('https://webdriveruniversity.com/');
-        cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force:true});
-
         cy.get("[value='lettuce']").should('not.be.checked');
         cy.get("[value='pumpkin']").should('be.checked');
         
