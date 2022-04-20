@@ -14,7 +14,8 @@
     "delete-results": "rm -rf cypress/results/junit/* || true",
     "mochawesome-report" : "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
     "delete-mochawesome-report" : "rm -rf mochawesome-report/* || true",
-    "cypress-regression-pack" : "npm run delete-results && npm run delete-mochawesome-results && npm run triggerAllTest-headless && npm run mochawesome-report"
+    "cypress-regression-pack" : "npm run delete-results && npm run delete-mochawesome-results && npm run triggerAllTest-headless && npm run mochawesome-report",
+    "triggerAllTest-staging" : "npx cypress run --config-file cypress/config/staging.json"
   },
   "author": "Alfonso Rojo",
   "license": "ISC",
