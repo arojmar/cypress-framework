@@ -5,9 +5,14 @@ describe("Test Contact Us form via Automation Test Store", () => {
         cy.fixture("userDetails").as("user");
     })
 
-    it("Should be able to submit a sucessful submission Contact Us Form", ()=>{
+    it("Should be able to submit a sucessful submission Contact Us Form", {
+        retries : {
+            runMode : 2,
+            openMode : 2
+        }
+    }, ()=>{
         cy.visit("https://automationteststore.com");
-        cy.get("a[href$='contact']").click().then(function(itemNameLink){
+        cy.get("a[href$='contact']55").click().then(function(itemNameLink){
             cy.log("The name of the link is: " + itemNameLink.text());
         });
         // cy.xpath("//a[contains(@href, 'contact')]").click();
