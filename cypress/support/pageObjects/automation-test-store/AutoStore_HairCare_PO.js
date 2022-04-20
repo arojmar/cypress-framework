@@ -5,7 +5,7 @@ class AutoStore_HairCare_PO {
                 // debugger
             });
         })
-        cy.get('.block_7 > .nav > .dropdown > .dropdown-toggle').click().debug();
+        cy.get('.block_7 > .nav > .dropdown > .dropdown-toggle').click();
     }
 
 }
