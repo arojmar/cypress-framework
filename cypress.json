@@ -9,5 +9,10 @@
     "env": {
         "first_name" : "Sara",
         "webdriveruni_homepage" : "https://webdriveruniversity.com/"
+    },
+
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "configFile": "reporter-config.json"
     }
 }
