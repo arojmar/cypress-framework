@@ -9,23 +9,30 @@
     "triggerAllTest-chromium": "npx cypress run --browser chromium",
     "triggerAllTest-webdriveruni": "npx cypress run --spec cypress/integration/webdriver-uni/*",
     "triggerSomeTest": "npx cypress run --spec cypress/integration/webdriver-uni/c*",
+    "triggerAllTest-autostore": "npx cypress run --spec cypress/integration/automation-test-store/*",
+    "triggerAllTest-autostore-dashboard": "npx cypress run --spec cypress/integration/automation-test-store/* --record --key 72fefb3d-02a6-4b0f-8115-7ead2afc52e9",
     "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
     "delete-unit-report": "rm -rf cypress/results/junit/results.xml",
     "delete-results": "rm -rf cypress/results/junit/* || true",
-    "mochawesome-report" : "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
-    "delete-mochawesome-report" : "rm -rf mochawesome-report/* || true",
-    "cypress-regression-pack" : "npm run delete-results && npm run delete-mochawesome-results && npm run triggerAllTest-headless && npm run mochawesome-report",
-    "triggerAllTest-staging" : "npx cypress run --config-file cypress/config/staging.json"
+    "mochawesome-report": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
+    "delete-mochawesome-report": "rm -rf mochawesome-report/* || true",
+    "cypress-regression-pack": "npm run delete-results && npm run delete-mochawesome-results && npm run triggerAllTest-headless && npm run mochawesome-report",
+    "triggerAllTest-staging": "npx cypress run --config-file cypress/config/staging.json",
+    "cypress-multi-browser" : "npm run triggerAllTest-autostore -- --browser chrome --headed && npm run triggerAllTest-autostore -- --browser electron --headed"
   },
   "author": "Alfonso Rojo",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^9.5.4",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-file-upload": "^5.0.8",
     "cypress-multi-reporters": "^1.5.0",
     "cypress-xpath": "^1.6.2",
     "mocha": "^9.2.2",
     "mocha-junit-reporter": "^2.0.2",
     "mochawesome": "^7.1.3"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false
   }
 }
