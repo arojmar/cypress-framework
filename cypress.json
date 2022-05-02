@@ -17,6 +17,10 @@
   "reporterOptions": {
     "configFile": "reporter-config.json"
   },
+  "testFiles": "**/*.feature",
   "experimentalStudio": true,
-  "projectId": "xo7oz3"
+  "projectId": "xo7oz3",
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false
+  }
 }

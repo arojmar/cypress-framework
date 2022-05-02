@@ -11,6 +11,7 @@
     "triggerSomeTest": "npx cypress run --spec cypress/integration/webdriver-uni/c*",
     "triggerAllTest-autostore": "npx cypress run --spec cypress/integration/automation-test-store/*",
     "triggerAllTest-autostore-dashboard": "npx cypress run --spec cypress/integration/automation-test-store/* --record --key 72fefb3d-02a6-4b0f-8115-7ead2afc52e9",
+    "triggerAllTest-cucumberTests": "npx cypress run --spec cypress/integration/webdriver-uni/*.feature --browser chrome",
     "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
     "delete-unit-report": "rm -rf cypress/results/junit/results.xml",
     "delete-results": "rm -rf cypress/results/junit/* || true",
